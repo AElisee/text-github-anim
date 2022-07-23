@@ -13,25 +13,26 @@ const wordGeneretor = () => {
   let word = document.createElement("span");
   target.appendChild(word);
   word.textContent = textArray[wordIndex];
+  word.style.animation = "anim 3s ease-in-out";
 
   setTimeout(() => {
-    if (wordIndex < textArray.length) {
+    if (wordIndex <= textArray.length) {
       word.remove();
-      word.classList.add("hidden");
     }
-  }, 2500);
+  }, 3000);
 };
 
 const loop = () => {
   setTimeout(() => {
-    if (wordIndex < textArray.length) {
+    if (wordIndex >= textArray.length) {
+      wordIndex = 0;
+      loop();
+    } else if (wordIndex < textArray.length) {
       wordGeneretor();
-      target.classList.remove("hidden");
-      target.classList.add("active");
       wordIndex++;
       setTimeout(() => {
         loop();
-      }, 2500);
+      }, 3000);
     }
   }, 60);
 };

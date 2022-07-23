@@ -40,15 +40,27 @@ body {
   padding: 0;
 }
 
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* EFFECT */
 
 #target {
-  transform: translateY(30px);
-  opacity: 0;
+  /* transform: translateY(30px);
+  opacity: 0; */
   color: yellow;
 }
 
-#target.active {
+/* #target.active {
   transform: translateY(0);
   opacity: 1;
   transition: 0.2s ease-in-out;
@@ -57,4 +69,4 @@ body {
 #target.hidden {
   transform: translateY(-200px);
   opacity: 0;
-}
+} */
